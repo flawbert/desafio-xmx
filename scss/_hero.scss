@@ -1,0 +1,143 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background-image: url('../assets/images/Hero.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #080808;
+
+    &__wrapper {
+        position: relative;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr; 
+        gap: 20px;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    &__content {
+        max-width: 580px;
+    }
+
+    &__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: $color-text-muted;
+        margin-bottom: 16px;
+
+        img { width: 14px; }
+    }
+
+    &__title {
+        font-size: 3.2rem; 
+        line-height: 1.2;
+        margin-bottom: 20px;
+        font-weight: 800;
+
+        .text-gradient {
+            @include text-gradient($color-primary-orange, $color-primary-yellow);
+        }
+    }
+
+    &__description {
+        font-size: 1.05rem;
+        color: $color-text-muted;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 90%;
+
+        strong { color: $color-text-main; }
+    }
+
+    &__benefits {
+        list-style: none;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 16px 30px;
+        margin-bottom: 40px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+
+            img { width: 18px; }
+        }
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        background: linear-gradient(180deg, #FFE500 0%, #FFB800 100%);
+        color: #000;
+        font-size: 1.1rem;
+        font-weight: 800;
+        padding: 16px 45px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &--glow {
+            box-shadow: 0 8px 25px rgba(255, 184, 0, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 184, 0, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+        }
+    }
+    @media (max-width: 768px) {
+        
+        background-image: url('../assets/images/Hero-mobile.svg'); 
+        background-position: top center;
+        background-size: 100% auto; 
+        align-items: flex-start;
+
+        &__wrapper {
+            grid-template-columns: 1fr; 
+            padding-top: 400px;
+            padding-bottom: 60px;
+        }
+
+        &__title {
+            font-size: 2.2rem; 
+            
+            .hide-mobile {
+                display: none; 
+            }
+        }
+
+        &__description {
+            font-size: 1rem;
+        }
+
+        &__benefits {
+            grid-template-columns: 1fr; 
+            gap: 12px;
+        }
+
+        .btn {
+            width: 100%; 
+        }
+
+        &__visuals {
+            display: none; 
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@mixin text-gradient($start-color, $end-color) {
+    background: linear-gradient(90deg, $start-color 0%, $end-color 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

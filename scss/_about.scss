@@ -1,0 +1,130 @@
+.about {
+    position: relative;
+    padding: 100px 0;
+    background-color: #080808; 
+    overflow: hidden; 
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -8%;
+        width: 108%;
+        height: 100%;
+        background-image: url('../assets/images/Sobre.svg');
+        background-size: cover;
+        background-position: left center;
+        background-repeat: no-repeat;
+        z-index: 1;
+        pointer-events: none;
+        -webkit-mask-image: linear-gradient(to right, black 50%, transparent 90%);
+        mask-image: linear-gradient(to right, black 50%, transparent 90%);
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr; 
+        gap: 40px;
+        align-items: center;
+        min-height: 650px; 
+    }
+
+    &__visuals {
+        display: block; 
+    }
+
+    &__content {
+        max-width: 850px;
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        margin-bottom: 24px;
+        font-weight: 800;
+        white-space: nowrap;
+
+        .text-gradient {
+            background: linear-gradient(90deg, #FF5E00 0%, #FFB300 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+
+    &__description {
+        font-size: 1.05rem;
+        color: #A0A0A0;
+        line-height: 1.6;
+        margin-bottom: 20px; 
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        background: linear-gradient(180deg, #FFE500 0%, #FFB800 100%);
+        color: #000;
+        font-size: 1.1rem;
+        font-weight: 800;
+        padding: 16px 45px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 15px; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &--glow {
+            box-shadow: 0 8px 25px rgba(255, 184, 0, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 184, 0, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        img { width: 20px; }
+    }
+
+    // --- RESPONSIVIDADE (MOBILE) ---
+    @media (max-width: 768px) {
+        padding: 0 0 80px 0; 
+        align-items: flex-start;
+
+        &::before {
+            display: none; 
+        }
+
+        background-image: url('../assets/images/Sobre-mobile.svg'); 
+        background-position: top center;
+        background-size: 100% auto; 
+        background-repeat: no-repeat;
+
+        &__wrapper {
+            grid-template-columns: 1fr; 
+            padding-top: 450px; 
+            min-height: auto;
+        }
+
+        &__visuals {
+            display: none; 
+        }
+
+        &__content {
+            max-width: 100%;
+        }
+
+        &__title {
+            font-size: 2.2rem; 
+        }
+        
+        .btn {
+            width: 100%; 
+        }
+    }
+}
