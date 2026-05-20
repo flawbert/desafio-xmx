@@ -1,0 +1,97 @@
+.footer {
+    width: 100%;
+
+    &__nav-bar {
+        background-color: #FFC82C; 
+        padding: 24px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__links {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 15px 30px; 
+        margin: 0;
+        padding: 0;
+
+        li a {
+            color: #111111; 
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: opacity 0.2s ease, text-decoration 0.2s ease;
+
+            &:hover {
+                opacity: 0.7;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__disclaimer {
+        background-color: #0b0b0b;
+        padding: 50px 20px;
+        text-align: center;
+
+        p {
+            color: #A0A0A0;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+    }
+
+    &__copyright {
+        background-color: #FFFFFF;
+        padding: 30px 20px;
+        text-align: center;
+
+        p {
+            color: #222222;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0 0 6px 0;
+
+            &:last-child {
+                margin-bottom: 0;
+                color: #555555;
+            }
+        }
+    }
+
+    // --- RESPONSIVIDADE (MOBILE) ---
+    @media (max-width: 768px) {
+        
+        &__nav-bar {
+            padding: 30px 20px;
+        }
+
+        &__links {
+            gap: 15px 20px;
+            
+            li a {
+                font-size: 0.95rem;
+            }
+        }
+
+        &__disclaimer {
+            padding: 40px 20px;
+            
+            p {
+                font-size: 0.75rem;
+            }
+        }
+
+        &__copyright {
+            padding: 25px 20px;
+            
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

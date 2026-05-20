@@ -9,7 +9,7 @@
     }
 
     &__header {
-        max-width: 760px;
+        max-width: 900px;
         text-align: center;
         margin-bottom: 70px;
     }
@@ -20,9 +20,16 @@
         line-height: 1.1;
         color: #111;
         margin-bottom: 18px;
+        white-space: nowrap;
 
         .text-gradient {
-            color: #f3a51d;
+            font-size: inherit;
+            text-transform: none;
+            background: linear-gradient(90deg, #FF5E00 0%, #FFB300 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
     }
 
@@ -35,29 +42,24 @@
     &__grid {
         width: 100%;
         max-width: 1100px;
-
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 70px 28px;
+        
+        margin-bottom: 60px; 
     }
 }
 
 .ingredient-card {
     position: relative;
-
     background: #111;
     border-radius: 14px;
-
     min-height: 190px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 60px 28px 32px;
-
     text-align: center;
-
     transition: 0.3s ease;
 
     &:hover {
@@ -66,35 +68,25 @@
 
     &__image {
         position: absolute;
-
         top: -42px;
         left: 50%;
-
         transform: translateX(-50%);
-
         width: 86px;
         height: 86px;
-
-        border-radius: 50%;
-        border: 3px solid #f2c300;
-
-        background: white;
-
+        
         display: flex;
         align-items: center;
         justify-content: center;
-
-        overflow: hidden;
+        border-radius: 50%;
 
         img {
-            width: 75%;
-            height: 75%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
     }
 
     &__content {
-
         h3 {
             color: white;
             font-size: 28px;
@@ -112,33 +104,55 @@
     }
 }
 
-.btn-order {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        background: linear-gradient(180deg, #FFE500 0%, #FFB800 100%);
-        color: #000;
-        font-size: 1.1rem;
-        font-weight: 800;
-        padding: 16px 45px;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        margin-top: 15px; 
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 18px 48px;
+    border-radius: 50px;
+    background: linear-gradient(180deg, #FFFE4A 0%, #FFD901 100%);
+    border-bottom: 5px solid #8E7C02;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    width: 100%;
+    max-width: 420px;
 
-        &--glow {
-            box-shadow: 0 8px 25px rgba(255, 184, 0, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.5);
-        }
-
-        &:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(255, 184, 0, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.5);
-        }
-
-        img { width: 20px; }
+    @media (max-width: 767px) {
+      max-width: 100%;
+      padding: 18px 24px;
     }
+
+    &:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+
+    &:active {
+      transform: translateY(1px);
+      filter: brightness(0.97);
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0E0D11;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+
+      @media (max-width: 767px) {
+        font-size: 20px;
+      }
+    }
+  }
 
 @media (max-width: 992px) {
 
@@ -161,6 +175,7 @@
 
         &__title {
             font-size: 32px;
+            white-space: normal;
         }
 
         &__subtitle {
@@ -187,10 +202,5 @@
                 font-size: 13px;
             }
         }
-    }
-
-    .btn-order {
-        width: 100%;
-        justify-content: center;
     }
 }

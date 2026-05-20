@@ -11,7 +11,7 @@
         left: -8%;
         width: 108%;
         height: 100%;
-        background-image: url('../assets/images/Sobre.svg');
+        background-image: url('../assets/images/Sobre.png');
         background-size: cover;
         background-position: left center;
         background-repeat: no-repeat;
@@ -63,33 +63,55 @@
         margin-bottom: 20px; 
     }
 
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        background: linear-gradient(180deg, #FFE500 0%, #FFB800 100%);
-        color: #000;
-        font-size: 1.1rem;
-        font-weight: 800;
-        padding: 16px 45px;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        margin-top: 15px; 
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 18px 48px;
+    border-radius: 50px;
+    background: linear-gradient(180deg, #FFFE4A 0%, #FFD901 100%);
+    border-bottom: 5px solid #8E7C02;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    width: 100%;
+    max-width: 420px;
 
-        &--glow {
-            box-shadow: 0 8px 25px rgba(255, 184, 0, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.5);
-        }
-
-        &:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(255, 184, 0, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.5);
-        }
-
-        img { width: 20px; }
+    @media (max-width: 767px) {
+      max-width: 100%;
+      padding: 18px 24px;
     }
+
+    &:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+
+    &:active {
+      transform: translateY(1px);
+      filter: brightness(0.97);
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0E0D11;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+
+      @media (max-width: 767px) {
+        font-size: 20px;
+      }
+    }
+  }
 
     // --- RESPONSIVIDADE (MOBILE) ---
     @media (max-width: 768px) {
@@ -100,7 +122,7 @@
             display: none; 
         }
 
-        background-image: url('../assets/images/Sobre-mobile.svg'); 
+        background-image: url('../assets/images/Sobre-mobile.png'); 
         background-position: top center;
         background-size: 100% auto; 
         background-repeat: no-repeat;
